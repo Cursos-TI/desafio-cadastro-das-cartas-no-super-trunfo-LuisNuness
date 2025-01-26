@@ -6,6 +6,8 @@ int main() {
     float area;
     float pib;
     int pontosturisticos;
+    float densidadePopulacional;
+    float pibPerCapita;
 
     // Solicita o código da cidade
     printf("Digite o código da cidade (ex: A01): ");
@@ -24,12 +26,18 @@ int main() {
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", &pontosturisticos);
 
-    // Exibe os dados cadastrados
+    // Calcula a densidade populacional e o PIB per capita
+    densidadePopulacional = populacao / area;
+    pibPerCapita = pib * 1000000000 / populacao;  // Convertendo PIB de bilhões para unidades monetárias
+
+    // Exibe os dados cadastrados, incluindo as novas propriedades calculadas
     printf("\nInformações da Cidade %s\n", codigo);
     printf("População: %d\n", populacao);
     printf("Área: %.2f km²\n", area);
     printf("PIB: %.2f bilhões\n", pib);
     printf("Pontos turísticos: %d\n", pontosturisticos);
+    printf("Densidade Populacional: %.2f habitantes por km²\n", densidadePopulacional);
+    printf("PIB per Capita: %.2f unidades monetárias\n", pibPerCapita);
 
     return 0;
 }
